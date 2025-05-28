@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-nextjs",
+  "version": "1.0.0",
+  "description": "portfólio",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenisMec9/portfolio-nextjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DenisMec9/portfolio-nextjs/issues"
+  },
+  "homepage": "https://github.com/DenisMec9/portfolio-nextjs#readme",
+  "dependencies": {
+    "next": "^15.3.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
