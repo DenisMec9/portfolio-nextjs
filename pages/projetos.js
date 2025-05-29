@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Projetos() {
   const [repos, setRepos] = useState([]);
@@ -11,16 +12,26 @@ export default function Projetos() {
 
   return (
     <div className="container">
-      <h1 className="titulo">🕹️ Missões no GitHub</h1>
+      <h1 className="titulo">🧩 Missões no GitHub</h1>
       <div className="cards">
         {repos.map(repo => (
-          <div className="card" key={repo.id}>
+          <motion.div
+            className="card"
+            key={repo.id}
+            whileHover={{ scale: 1.05, rotate: 1 }}
+            transition={{ duration: 0.3 }}
+          >
             <h2>{repo.name}</h2>
-            <p>{repo.description || 'Sem descrição'}</p>
-            <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="btn-jogar">
+            <p>{repo.description || 'Sem descrição disponível'}</p>
+            <a
+              href={repo.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-jogar"
+            >
               Explorar 🚀
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
