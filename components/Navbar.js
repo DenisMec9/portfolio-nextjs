@@ -1,4 +1,4 @@
-// components/Navbar.js
+
 import Link from 'next/link';
 
 export default function Navbar() {
@@ -21,19 +21,3 @@ export default function Navbar() {
   );
 }
 
-// styles/globals.css (adicione ao final do arquivo)
-
-
-
-// pages/_app.js (atualize para importar o Navbar)
-import '@/styles/globals.css';
-import Navbar from '@/components/Navbar';
-
-export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <Navbar />
-      <Component {...pageProps} />
-    </>
-  );
-}
