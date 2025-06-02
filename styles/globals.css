@@ -1,4 +1,6 @@
-/* ===== TEMA CLARO (padrão) ===== */
+/* ==========================
+   TEMA CLARO E ESCURO
+========================== */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f4f4f4;
@@ -8,26 +10,113 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-
-/* ===== TEMA ESCURO ===== */
 body.dark {
   background-color: #0e0e0e;
   color: #e0e0e0;
 }
 
-/* ===== LAYOUT BASE ===== */
-.home-layout {
-  padding: 2rem 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffe1;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #00ffe1;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #00ffe1;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+/* ==========================
+   HERO SECTION COM ANIMAÇÃO
+========================== */
 .hero-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
   text-align: center;
   padding: 4rem 1rem;
-  background: linear-gradient(135deg, #1c1c1c, #1a1a1a);
   border-radius: 16px;
   margin-bottom: 3rem;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .hero-section h1 {
@@ -51,7 +140,11 @@ body.dark {
   margin-bottom: 2rem;
 }
 
-.btn-destaque {
+/* ==========================
+   BOTÕES
+========================== */
+.btn-destaque,
+.btn-jogar {
   display: inline-block;
   background-color: #00ffe1;
   color: #000;
@@ -60,13 +153,22 @@ body.dark {
   border-radius: 12px;
   text-decoration: none;
   transition: background 0.3s ease;
+  animation: pulseBtn 1.8s infinite;
 }
 
-.btn-destaque:hover {
+@keyframes pulseBtn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.btn-destaque:hover,
+.btn-jogar:hover {
   background: #00bfae;
 }
 
-/* ===== SEÇÕES ===== */
+/* ==========================
+   SEÇÕES GERAIS
+========================== */
 .secao {
   padding: 4rem 1rem;
   margin-bottom: 3rem;
@@ -85,7 +187,9 @@ body.dark {
   color: #bbb;
 }
 
-/* ===== CARDS DE PROJETOS ===== */
+/* ==========================
+   CARDS DE PROJETOS
+========================== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -122,24 +226,9 @@ body.dark {
   flex-grow: 1;
 }
 
-.btn-jogar {
-  margin-top: 1rem;
-  display: inline-block;
-  background: #00ffe1;
-  color: #000;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  text-align: center;
-}
-
-.btn-jogar:hover {
-  background: #00bfae;
-}
-
-/* ===== BOTÃO DE TEMA (TOGGLE) ===== */
+/* ==========================
+   SWITCH DE TEMA
+========================== */
 .btn-toggle {
   position: fixed;
   top: 1rem;
@@ -159,7 +248,9 @@ body.dark {
   background-color: #00bfae;
 }
 
-/* ===== MOBILE STYLES ===== */
+/* ==========================
+   RESPONSIVO (MOBILE)
+========================== */
 @media (max-width: 768px) {
   .hero-section h1 {
     font-size: 1.8rem;
@@ -201,35 +292,4 @@ body.dark {
   .menu-container {
     padding: 2rem 1rem;
   }
-}
-.hero-section {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  text-align: center;
-  padding: 4rem 1rem;
-  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(10, 10, 10, 0.85)),
-    url('https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-  margin-bottom: 3rem;
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.7));
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  margin: 0 auto;
 }

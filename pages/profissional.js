@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function Profissional() {
   return (
     <div className="container">
@@ -7,5 +9,5 @@ export default function Profissional() {
         <li>Estágio em TI - Empresa DEF</li>
       </ul>
     </div>
-  )
+  ) 
 }

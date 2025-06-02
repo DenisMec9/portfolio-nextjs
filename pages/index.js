@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ParticlesBackground from '../components/ParticlesBackground';
+import MatrixBackground from '../components/MatrixBackground';
 
 export default function Home() {
   useEffect(() => {
@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <main className="home-layout">
       <section className="hero-section">
-        <ParticlesBackground />
         <motion.div
           className="hero-content"
           initial="hidden"
