@@ -388,3 +388,51 @@ body.dark {
     padding: 2rem 1rem;
   }
 }
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.foto-perfil {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00ff5a;
+  box-shadow: 0 0 20px rgba(0, 255, 90, 0.4);
+}
+
+.sobre-conteudo {
+  flex: 1;
+}
+
+.redes {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.redes li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.redes a {
+  color: #00ff5a;
+  text-decoration: none;
+}
+
+.redes a:hover {
+  text-decoration: underline;
+}
+
+.citacao {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #aaa;
+}
