@@ -436,3 +436,40 @@ body.dark {
   font-style: italic;
   color: #aaa;
 }
+.footer {
+  background-color: #0e0e0e;
+  color: #00ff5a;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid #00ff5a22;
+}
+
+.footer-content p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-icons {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.footer-icons a {
+  color: #00ff5a;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+  transform: scale(1.2);
+  color: #00cc44;
+}
+
+.footer-copy {
+  font-style: italic;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}

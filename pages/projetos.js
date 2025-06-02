@@ -1,39 +1,46 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-
 export default function Projetos() {
-  const [repos, setRepos] = useState([]);
-
-  useEffect(() => {
-    fetch('https://api.github.com/users/DenisMec9/repos')
-      .then(res => res.json())
-      .then(data => setRepos(data));
-  }, []);
+  const projetos = [
+    {
+      nome: 'Conversores em Next.js',
+      descricao: 'Aplicação com conversores de moeda, temperatura e distância.',
+      url: 'https://conversores-nextjs.vercel.app/',
+    },
+    {
+      nome: 'Jogo de Dados',
+      descricao: 'Jogo interativo tipo Bulls and Cows com frontend dinâmico.',
+      url: 'https://pfe-2025.vercel.app/jogo',
+    },
+    {
+      nome: 'CRUD de Despesas',
+      descricao: 'Aplicação para cadastrar, editar e excluir despesas (HTML + CSS + JS).',
+      url: 'https://web2024-4.vercel.app/atv8-%20CRUD%20de%20Despesas/',
+    },
+    {
+      nome: 'Jogo Senha em JS Puro',
+      descricao: 'Mini game de adivinhação com validação em tempo real.',
+      url: 'https://web2024-4.vercel.app/Portf%C3%B3lio/Game.html',
+    },
+  ];
 
   return (
-    <div className="container">
-      <h1 className="titulo">🧩 Missões no GitHub</h1>
+    <section className="secao">
+      <h2>🧩 Missões no GitHub</h2>
       <div className="cards">
-        {repos.map(repo => (
-          <motion.div
-            className="card"
-            key={repo.id}
-            whileHover={{ scale: 1.05, rotate: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <h2>{repo.name}</h2>
-            <p>{repo.description || 'Sem descrição disponível'}</p>
+        {projetos.map((repo, index) => (
+          <div key={index} className="card">
+            <h2>{repo.nome}</h2>
+            <p>{repo.descricao}</p>
             <a
-              href={repo.html_url}
+              href={repo.url}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-jogar"
             >
               Explorar 🚀
             </a>
-          </motion.div>
+          </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
