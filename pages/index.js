@@ -15,6 +15,9 @@ export default function Home() {
   return (
     <main className="home-layout">
       <section className="hero-section">
+        {/* MATRIX BACKGROUND ANIMADO */}
+        <MatrixBackground />
+
         <motion.div
           className="hero-content"
           initial="hidden"
@@ -24,11 +27,13 @@ export default function Home() {
         >
           <h1>Olá, eu sou <span>Denis</span></h1>
           <h2>Desenvolvedor Front-End</h2>
-          <p>Criando soluções modernas com <strong>React</strong>, <strong>Next.js</strong> e foco total em performance, acessibilidade e boas práticas de código.</p>
+          <p>
+            Criando soluções modernas com <strong>React</strong>, <strong>Next.js</strong> e foco total em performance,
+            acessibilidade e boas práticas de código.
+          </p>
           <a href="/projetos" className="btn-destaque">Veja meus projetos</a>
         </motion.div>
       </section>
     </main>
   );
 }
-  
