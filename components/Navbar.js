@@ -10,8 +10,6 @@ export default function Navbar() {
           <ul className="nav-links">
             <li><Link href="/">Início</Link></li>
             <li><Link href="/sobre">Sobre</Link></li>
-            <li><Link href="/academica">Acadêmica</Link></li>
-            <li><Link href="/profissional">Profissional</Link></li>
             <li><Link href="/projetos">Projetos</Link></li>
             <li><Link href="/jogo">Jogo da Senha</Link></li>
           </ul>

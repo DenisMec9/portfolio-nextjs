@@ -15,23 +15,27 @@ export default function Home() {
   return (
     <main className="home-layout">
       <section className="hero-section">
-        {/* MATRIX BACKGROUND ANIMADO */}
         <MatrixBackground />
 
         <motion.div
-          className="hero-content"
+          className="hero-content-row"
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.8 }}
           variants={fadeUp}
         >
-          <h1>Olá, eu sou <span>Denis</span></h1>
-          <h2>Desenvolvedor Front-End</h2>
-          <p>
-            Criando soluções modernas com <strong>React</strong>, <strong>Next.js</strong> e foco total em performance,
-            acessibilidade e boas práticas de código.
-          </p>
-          <a href="/projetos" className="btn-destaque">Veja meus projetos</a>
+          {/* Imagem do Denis */}
+          <div className="hero-img-container">
+            <img src="/denis.png" alt="Foto de Denis" className="hero-img" />
+          </div>
+
+          {/* Texto de introdução */}
+          <div className="hero-text">
+            <h1>Olá, eu sou <span>Denis</span></h1>
+            <h2>Desenvolvedor Front-End</h2>
+            <p>Criando soluções modernas com <strong>React</strong>, <strong>Next.js</strong> e foco total em performance, acessibilidade e boas práticas de código.</p>
+            <a href="/projetos" className="btn-destaque">Veja meus projetos</a>
+          </div>
         </motion.div>
       </section>
     </main>
