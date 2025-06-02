@@ -254,59 +254,61 @@ body.dark {
 .jogo-container {
   max-width: 600px;
   margin: 4rem auto;
-  background-color: #111;
   padding: 2rem;
+  background-color: #0f0f0f;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 255, 90, 0.15);
+  box-shadow: 0 0 20px rgba(0, 255, 90, 0.2);
   text-align: center;
-  color: #e0e0e0;
-}
-
-.jogo-container h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #00ff5a;
-}
-
-.jogo-container .desc {
-  font-size: 1rem;
-  color: #aaa;
-  margin-bottom: 2rem;
+  color: #fff;
 }
 
 .jogo-input {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem;
   font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid #444;
-  background: #1a1a1a;
-  color: #eee;
-  margin-right: 0.5rem;
-  width: 150px;
+  background-color: #111;
+  color: #fff;
+  width: 180px;
 }
 
 .jogo-btn {
-  padding: 0.75rem 1.25rem;
-  background: #00ff5a;
+  margin: 0.5rem 0.4rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #00ff5a;
   color: #000;
   font-weight: bold;
-  border-radius: 8px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
-  margin: 0.25rem;
+  transition: background 0.3s ease;
 }
 
 .jogo-btn:hover {
-  background: #00cc44;
+  background-color: #00cc44;
 }
 
 .jogo-feedback {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   font-size: 1.1rem;
-  color: #00ff5a;
-  font-weight: bold;
 }
+
+.jogo-feedback.vitoria {
+  color: #00ff5a;
+  animation: victoryPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes victoryPulse {
+  from {
+    text-shadow: 0 0 5px #00ff5a, 0 0 10px #00ff5a;
+    transform: scale(1);
+  }
+  to {
+    text-shadow: 0 0 15px #00ff5a, 0 0 25px #00ff5a;
+    transform: scale(1.05);
+  }
+}
+
 
 /* ==========================
    RESPONSIVO (MOBILE)
